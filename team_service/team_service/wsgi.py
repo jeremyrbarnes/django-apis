@@ -1,5 +1,5 @@
 """
-WSGI config for eliminiation_pool_services project.
+WSGI config for team_service project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eliminiation_pool_services.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'team_service.settings')
 
 application = get_wsgi_application()

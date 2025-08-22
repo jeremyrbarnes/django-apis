@@ -1,5 +1,5 @@
 """
-ASGI config for eliminiation_pool_services project.
+ASGI config for player_service project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eliminiation_pool_services.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'player_service.settings')
 
 application = get_asgi_application()
