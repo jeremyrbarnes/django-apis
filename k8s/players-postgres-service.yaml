@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: teams-postgres-service
+  name: players-postgres-service
 spec:
   selector:
-    app: teams-postgres
+    app: players-postgres
   ports:
     - protocol: TCP
       port: 5432
