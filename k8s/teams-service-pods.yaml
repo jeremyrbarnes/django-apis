@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: teams-postgres
+spec:
+  containers:
+    - name: teams-postgres
+      image: postgres:13.22-alpine3.22
+      env:
+        - name: POSTGRES_DB
+          value: "teams_db"
+        - name: POSTGRES_USER
+          value: "teams_su"
+        - name: POSTGRES_PASSWORD
+          value: "Password123!@#"
