@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,9 +77,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'k8s-dev': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'games_db',
+        'USER': 'games_su',
+        'PASSWORD': 'Password123!@#',
+        'HOST': 'games-postgres-service', # K8s Service name
+        'PORT': 5432,
     }
 }
 
+DJANGO_DB_ENV = os.environ.get('DJANGO_DB_ENV', 'default')
+
+if DJANGO_DB_ENV == 'k8s-dev':
+    DATABASES['default'] = DATABASES['k8s-dev']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
