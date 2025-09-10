@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class TeamServiceAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'team_service_app'
+    name = 'team-api_app'
